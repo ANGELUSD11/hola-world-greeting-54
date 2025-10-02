@@ -114,11 +114,11 @@ const Index = () => {
       {/* Skills */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 flex items-center gap-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 flex items-center justify-center gap-3">
             <Database className="w-8 h-8" />
             Mis Skills
           </h2>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {skills.map((skill) => (
               <SkillIcon key={skill.alt} {...skill} />
             ))}
