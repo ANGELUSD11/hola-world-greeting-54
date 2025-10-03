@@ -1,6 +1,46 @@
 // Language Switcher
 let currentLang = 'es';
 
+// Channel ID - Cambia esto por tu ID de canal
+const CHANNEL_ID = 'UCjHYcO_GQmLWasg1UDhLq9Q';
+
+// Fetch subscriber count
+async function fetchSubscriberCount() {
+    const subscriberElement = document.getElementById('subscriberCount');
+    
+    try {
+        // Intenta obtener el conteo de suscriptores
+        const response = await fetch(`https://api.countapi.xyz/get/youtube/${CHANNEL_ID}`);
+        
+        if (response.ok) {
+            const data = await response.json();
+            if (data.value) {
+                subscriberElement.textContent = formatNumber(data.value);
+                return;
+            }
+        }
+        
+        // Si falla, muestra un número de ejemplo
+        subscriberElement.textContent = 'N/A';
+    } catch (error) {
+        console.error('Error fetching subscriber count:', error);
+        subscriberElement.textContent = 'N/A';
+    }
+}
+
+function formatNumber(num) {
+    if (num >= 1000000) {
+        return (num / 1000000).toFixed(2) + 'M';
+    } else if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'K';
+    }
+    return num.toString();
+}
+
+// Fetch on load and every 10 seconds
+fetchSubscriberCount();
+setInterval(fetchSubscriberCount, 10000);
+
 document.getElementById('langBtn').addEventListener('click', function() {
     // Toggle language
     currentLang = currentLang === 'es' ? 'en' : 'es';

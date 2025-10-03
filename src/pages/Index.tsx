@@ -2,6 +2,7 @@ import { Github, Youtube, Twitter, Twitch, MessageCircle, Code2, Database, Globe
 import { SocialLink } from "@/components/SocialLink";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SkillIcon } from "@/components/SkillIcon";
+import { SubscriberCounter } from "@/components/SubscriberCounter";
 import logo from "@/assets/logo.webp";
 
 const Index = () => {
@@ -66,10 +67,15 @@ const Index = () => {
       {/* Social Links */}
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
             {socialLinks.map((link) => (
               <SocialLink key={link.label} {...link} />
             ))}
+          </div>
+          
+          {/* Subscriber Counter */}
+          <div className="max-w-md mx-auto mt-8">
+            <SubscriberCounter channelId="UCjHYcO_GQmLWasg1UDhLq9Q" />
           </div>
         </div>
       </section>
