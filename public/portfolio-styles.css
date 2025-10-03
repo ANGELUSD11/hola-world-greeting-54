@@ -1,0 +1,192 @@
+/* Custom CSS Variables */
+:root {
+    --primary-color: #06b6d4;
+    --primary-dark: #0891b2;
+    --bg-dark: #0f172a;
+    --bg-dark-subtle: #1e293b;
+    --text-light: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.language-switcher .btn {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: rgba(6, 182, 212, 0.1);
+    transition: all 0.3s ease;
+}
+
+.language-switcher .btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero-section {
+    margin-top: 60px;
+}
+
+.diamond-container {
+    animation: float 3s ease-in-out infinite;
+}
+
+.diamond-icon {
+    font-size: 5rem;
+    color: var(--primary-color);
+    filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.5));
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-color), #0891b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Social Links */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-dark-subtle);
+    border: 2px solid var(--primary-color);
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+}
+
+.social-link i {
+    font-size: 1.25rem;
+}
+
+/* Cards */
+.bg-dark-subtle {
+    background-color: var(--bg-dark-subtle) !important;
+    border: 2px solid !important;
+}
+
+.card {
+    transition: all 0.3s ease;
+}
+
+/* Project Cards */
+.project-card {
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(6, 182, 212, 0.2);
+}
+
+.project-card .btn {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .btn {
+    transform: translateX(5px);
+}
+
+/* Skill Icons */
+.skill-icon {
+    width: 80px;
+    height: 80px;
+    padding: 1rem;
+    background: var(--bg-dark-subtle);
+    border: 2px solid var(--primary-color);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.skill-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* YouTube Section */
+.youtube-section iframe {
+    border-radius: 1rem;
+    border: 2px solid var(--primary-color);
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.5));
+    }
+    to {
+        filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.8));
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    
+    .diamond-icon {
+        font-size: 3rem;
+    }
+    
+    .social-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .skill-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Smooth transitions for language change */
+[data-es], [data-en] {
+    transition: opacity 0.2s ease;
+}
