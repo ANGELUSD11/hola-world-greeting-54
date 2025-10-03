@@ -1,7 +1,8 @@
-import { Github, Youtube, Twitter, Twitch, MessageCircle, Diamond, Code2, Database, Globe } from "lucide-react";
+import { Github, Youtube, Twitter, Twitch, MessageCircle, Code2, Database, Globe } from "lucide-react";
 import { SocialLink } from "@/components/SocialLink";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SkillIcon } from "@/components/SkillIcon";
+import logo from "@/assets/logo.webp";
 
 const Index = () => {
   const socialLinks = [
@@ -50,7 +51,7 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl relative">
           <div className="text-center space-y-8">
             <div className="inline-block animate-float">
-              <Diamond className="w-24 h-24 text-primary animate-glow mx-auto" />
+              <img src={logo} alt="ANGELUS11 Logo" className="w-32 h-32 md:w-40 md:h-40 object-contain animate-glow mx-auto" />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               ANGELUS11

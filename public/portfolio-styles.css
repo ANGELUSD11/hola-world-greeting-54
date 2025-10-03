@@ -43,15 +43,23 @@ body {
     margin-top: 60px;
 }
 
-.diamond-container {
+.logo-container {
     animation: float 3s ease-in-out infinite;
 }
 
-.diamond-icon {
-    font-size: 5rem;
-    color: var(--primary-color);
+.logo-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
     filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.5));
     animation: glow 2s ease-in-out infinite alternate;
+}
+
+@media (max-width: 768px) {
+    .logo-image {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 .gradient-text {
