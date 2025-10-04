@@ -153,9 +153,9 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 border-t border-border">
+      <footer className="py-12 px-4 bg-gradient-to-r from-primary to-accent">
         <div className="container mx-auto max-w-6xl text-center">
-          <p className="text-muted-foreground">
+          <p className="text-primary-foreground font-medium text-lg">
             © 2025 ANGELUS11 • Hecho con ❤️ y código
           </p>
         </div>
