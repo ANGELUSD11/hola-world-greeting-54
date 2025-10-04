@@ -32,6 +32,13 @@ const Index = () => {
       description: "Identificador de niveles de Geometry Dash usando IA",
       url: "https://huggingface.co/spaces/ANGELUSD11/RobtopLvlIdentifier1",
       borderColor: "border-blue-400"
+    },
+    {
+      title: "🚀 Space Shooter",
+      description: "Juego de naves espaciales clásico con acción y aventura",
+      url: "/space-game",
+      borderColor: "border-purple-500",
+      isInternal: true
     }
   ];
 

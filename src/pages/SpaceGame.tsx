@@ -1,0 +1,44 @@
+import { ArrowLeft, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+
+const SpaceGame = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="py-6 px-4 border-b border-border">
+        <div className="container mx-auto max-w-6xl flex items-center justify-between">
+          <Link to="/">
+            <Button variant="outline" size="sm" className="gap-2">
+              <ArrowLeft className="w-4 h-4" />
+              Volver al portafolio
+            </Button>
+          </Link>
+          <div className="flex items-center gap-3">
+            <Rocket className="w-6 h-6 text-primary" />
+            <h1 className="text-2xl font-bold text-primary">Space Shooter</h1>
+          </div>
+        </div>
+      </header>
+
+      {/* Game Container */}
+      <section className="py-8 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="relative aspect-video w-full rounded-lg overflow-hidden border-2 border-primary/30 bg-card/50 backdrop-blur-sm">
+            <iframe
+              src="https://itch.io/embed-upload/YOUR_GAME_ID_HERE?color=06b6d4"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+              title="Space Shooter Game"
+            />
+          </div>
+          <p className="text-center text-muted-foreground mt-4">
+            Usa las flechas para moverte y barra espaciadora para disparar
+          </p>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default SpaceGame;
