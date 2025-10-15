@@ -1,12 +1,18 @@
 import { ArrowLeft, Rocket } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import spaceGameBg from "@/assets/space-game-bg.jpg";
 
 const SpaceGame = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Background Image with Opacity */}
+      <div 
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{ backgroundImage: `url(${spaceGameBg})` }}
+      />
       {/* Header */}
-      <header className="py-6 px-4 border-b border-border">
+      <header className="relative z-10 py-6 px-4 border-b border-border backdrop-blur-sm bg-background/80">
         <div className="container mx-auto max-w-6xl flex items-center justify-between">
           <Link to="/">
             <Button variant="outline" size="sm" className="gap-2">
@@ -22,7 +28,7 @@ const SpaceGame = () => {
       </header>
 
       {/* Game Container */}
-      <section className="py-8 px-4">
+      <section className="relative z-10 py-8 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="relative aspect-video w-full rounded-lg overflow-hidden border-2 border-primary/30 bg-card/50 backdrop-blur-sm">
             <iframe
