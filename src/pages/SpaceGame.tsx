@@ -32,11 +32,13 @@ const SpaceGame = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="relative aspect-video w-full rounded-lg overflow-hidden border-2 border-primary/30 bg-card/50 backdrop-blur-sm">
             <iframe
-              src="https://itch.io/embed-upload/YOUR_GAME_ID_HERE?color=06b6d4"
+              src="https://itch.io/embed/3972224?bg_color=234446&fg_color=58fffa&link_color=7bfffd&border_color=276ea5"
               allowFullScreen
-              className="absolute inset-0 w-full h-full"
-              title="Space Shooter Game"
-            />
+              className="absolute inset-0 w-full h-full border-0"
+              title="ADVAD (DEMO) by ANGELUSD11"
+            >
+              <a href="https://angelus11.itch.io/advad-demo">ADVAD (DEMO) by ANGELUSD11</a>
+            </iframe>
           </div>
           <p className="text-center text-muted-foreground mt-4">
             Usa las flechas para moverte y barra espaciadora para disparar
