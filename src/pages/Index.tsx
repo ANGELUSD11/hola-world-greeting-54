@@ -125,8 +125,26 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Skills */}
+      {/* Game */}
       <section className="py-16 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 flex items-center justify-center gap-3">
+            🚀 ADVAD (DEMO)
+          </h2>
+          <div className="flex justify-center">
+            <iframe
+              src="https://itch.io/embed/3972224?bg_color=234446&fg_color=58fffa&link_color=7bfffd&border_color=276ea5"
+              className="w-full max-w-[552px] h-[167px]"
+              title="ADVAD (DEMO) by ANGELUSD11"
+            >
+              <a href="https://angelus11.itch.io/advad-demo">ADVAD (DEMO) by ANGELUSD11</a>
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section className="py-16 px-4 bg-secondary/20">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 flex items-center justify-center gap-3">
             <Database className="w-8 h-8" />
@@ -141,7 +159,7 @@ const Index = () => {
       </section>
 
       {/* YouTube Video */}
-      <section className="py-16 px-4 bg-secondary/20">
+      <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 flex items-center gap-3">
             <Youtube className="w-8 h-8" />
