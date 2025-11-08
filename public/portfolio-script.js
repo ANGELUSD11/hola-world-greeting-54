@@ -1,29 +1,35 @@
 // Language Switcher
 let currentLang = 'es';
 
-// Channel ID - Cambia esto por tu ID de canal
-const CHANNEL_ID = 'UCjHYcO_GQmLWasg1UDhLq9Q';
+// YouTube API configuration
+const SUPABASE_URL = 'https://kxlupxdmbotgojyfpalh.supabase.co';
 
-// Fetch subscriber count
-async function fetchSubscriberCount() {
+// Fetch YouTube data from secure edge function
+async function fetchYouTubeData() {
     const subscriberElement = document.getElementById('subscriberCount');
     
     try {
-        // Intenta obtener el conteo de suscriptores
-        const response = await fetch(`https://api.countapi.xyz/get/youtube/${CHANNEL_ID}`);
+        const response = await fetch(`${SUPABASE_URL}/functions/v1/get-latest-video`);
         
         if (response.ok) {
             const data = await response.json();
-            if (data.value) {
-                subscriberElement.textContent = formatNumber(data.value);
-                return;
+            
+            // Update subscriber count
+            if (subscriberElement && data.subscriberCount) {
+                subscriberElement.textContent = formatNumber(data.subscriberCount);
             }
+            
+            // Update latest video
+            const videoIframe = document.querySelector('.youtube-section iframe');
+            if (videoIframe && data.videoId) {
+                videoIframe.src = `https://www.youtube.com/embed/${data.videoId}`;
+            }
+            return;
         }
         
-        // Si falla, muestra un número de ejemplo
         subscriberElement.textContent = 'N/A';
     } catch (error) {
-        console.error('Error fetching subscriber count:', error);
+        console.error('Error fetching YouTube data:', error);
         subscriberElement.textContent = 'N/A';
     }
 }
@@ -37,9 +43,9 @@ function formatNumber(num) {
     return num.toString();
 }
 
-// Fetch on load and every 10 seconds
-fetchSubscriberCount();
-setInterval(fetchSubscriberCount, 10000);
+// Fetch on load and every 5 minutes
+fetchYouTubeData();
+setInterval(fetchYouTubeData, 300000);
 
 document.getElementById('langBtn').addEventListener('click', function() {
     // Toggle language

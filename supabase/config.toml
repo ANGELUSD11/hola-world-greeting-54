@@ -1,1 +1,4 @@
 project_id = "kxlupxdmbotgojyfpalh"
+
+[functions.get-latest-video]
+verify_jwt = false
