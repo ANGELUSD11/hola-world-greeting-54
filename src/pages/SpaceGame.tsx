@@ -30,12 +30,13 @@ const SpaceGame = () => {
       {/* Game Container */}
       <section className="relative z-10 py-8 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="relative aspect-video w-full rounded-lg overflow-hidden border-2 border-primary/30 bg-card/50 backdrop-blur-sm">
+          <div className="relative w-full rounded-lg overflow-hidden border-2 border-primary/30 bg-card/50 backdrop-blur-sm" style={{ height: '80vh', minHeight: '600px' }}>
             <iframe
-              src="https://itch.io/embed/3972224?bg_color=234446&fg_color=58fffa&link_color=7bfffd&border_color=276ea5"
+              src="https://angelus11.itch.io/advad-demo"
               allowFullScreen
               className="absolute inset-0 w-full h-full border-0"
               title="ADVAD (DEMO) by ANGELUSD11"
+              allow="fullscreen"
             >
               <a href="https://angelus11.itch.io/advad-demo">ADVAD (DEMO) by ANGELUSD11</a>
             </iframe>
